@@ -1,8 +1,14 @@
 //BUSINESS INFORMATION
 const BUSINESS_NAME = "[BUSINESS NAME]"
+
 const BUSINESS_ADDRESS = "[ADDRESS]"
-const BUSINESS_PHONE = "[PHONE NUMBER]"
+const BUSINESS_DIRECTION ="https://www.google.com/maps"
+
+const BUSINESS_PHONE = "(613) 823-6879"
+const PHONE_LINK = "tel:(613)-823-6879"
+
 const BOOKING_LINK = "https://www.google.com"
+
 const DESCRIPTION = " You are trying to find a beauty salon in Ottawa, ON, come to High Class Nails & Spa. We specialize in nail design, eye lash extensions, waxing, and much more. Our staff is very experienced and is sure to leave you satisfied with the way you look. We have the experience and skill that will have you coming back. For a great service in Ottawa, ON, call on High Class Nails & Spa."
 const DAYS = [ {
     date: "Sunday",
@@ -34,6 +40,8 @@ const DAYS = [ {
     openTime: "10.00AM",
     closeTime: "6.00PM"
 }];
+const AUTHOR_1 = "Kerri Seaver"
+const COMMENT_1 = "They do great work. I'm very particular about nail shape and both times I've been, they did not disappoint. Price is reasonable and they are timely with their appointments, they don't keep you waiting."
 
 const AUTHOR_2 = "Ave Poggione"
 const COMMENT_2 = "The service is amazing. It is always very clean and they have an amazing colour choice for a great price. I have loved all of my nails from them and will continue to visit. They are definitely one of the best nail salons I have been to."
@@ -59,11 +67,21 @@ var k = "<p>"
 k+='</p>';
 document.getElementById("hours").innerHTML = k;
     
+//business phone number
+var tel = document.getElementById("telephone")
+tel.textContent = BUSINESS_PHONE;
+tel.href = PHONE_LINK
+
 //business description 
 var description = document.getElementsByClassName("description");
 for (var i = 0; i < description.length; i++) {
     description[i].innerText = DESCRIPTION; // Change the content
 }
+
+//business direction
+var address = document.getElementById("address")
+address.innerText = BUSINESS_ADDRESS;
+address.href = BUSINESS_DIRECTION
 
 //booking link
 var allBookingLinks = document.getElementsByClassName("booking-link");
@@ -71,9 +89,8 @@ for (var i = 0; i < allBookingLinks.length; i++) {
     allBookingLinks[i].href  = BOOKING_LINK; // Change the content
 }
 
+
 //UPDATE CUSTOMER REVIEW
-const AUTHOR_1 = "Kerri Seaver"
-const COMMENT_1 = "hey do great work. I'm very particular about nail shape and both times I've been, they did not disappoint. Price is reasonable and they are timely with their appointments, they don't keep you waiting."
 var author1 = document.getElementsByClassName("author-1")
 var comment1  = document.getElementsByClassName("comment-1")
 author1[0].innerText  = AUTHOR_1; // Change the content
