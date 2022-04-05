@@ -4,12 +4,27 @@ const BUSINESS_NAME = "[BUSINESS NAME]"
 const BUSINESS_ADDRESS = "[ADDRESS]"
 const BUSINESS_DIRECTION ="https://www.google.com/maps"
 
+const MAP = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11231.653842558053!2d-75.7826766!3d45.2697601!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x55ba9b94921a369f!2sHigh%20Class%20Nails%20%26%20Spa!5e0!3m2!1sen!2sca!4v1636478597494!5m2!1sen!2sca" 
 const BUSINESS_PHONE = "(613) 823-6879"
 const PHONE_LINK = "tel:(613)-823-6879"
 
 const BOOKING_LINK = "https://www.google.com"
-
+const LOGO ="assets/photos/logo.png"
 const DESCRIPTION = " You are trying to find a beauty salon in Ottawa, ON, come to High Class Nails & Spa. We specialize in nail design, eye lash extensions, waxing, and much more. Our staff is very experienced and is sure to leave you satisfied with the way you look. We have the experience and skill that will have you coming back. For a great service in Ottawa, ON, call on High Class Nails & Spa."
+
+const CUSTOMER_PHOTO = ["assets/photos/img/gallery/customer-01.jpeg", 
+"assets/photos/img/gallery/customer-02.jpeg", 
+"assets/photos/img/gallery/customer-03.jpeg",
+"assets/photos/img/gallery/customer-04.jpeg",
+"assets/photos/img/gallery/customer-05.jpeg",
+"assets/photos/img/gallery/customer-06.jpeg",
+"assets/photos/img/gallery/customer-07.jpeg",
+"assets/photos/img/gallery/customer-08.jpeg",
+"assets/photos/img/gallery/customer-10.jpeg",
+"assets/photos/img/gallery/10.jpg",
+"assets/photos/img/gallery/11.jpg",
+"assets/photos/img/gallery/12.jpg"];
+
 const DAYS = [ {
     date: "Sunday",
     openTime: "11.00AM",
@@ -82,6 +97,8 @@ for (var i = 0; i < description.length; i++) {
 var address = document.getElementById("address")
 address.innerText = BUSINESS_ADDRESS;
 address.href = BUSINESS_DIRECTION
+var map = document.getElementById("map")
+map.src=MAP
 
 //booking link
 var allBookingLinks = document.getElementsByClassName("booking-link");
@@ -89,6 +106,17 @@ for (var i = 0; i < allBookingLinks.length; i++) {
     allBookingLinks[i].href  = BOOKING_LINK; // Change the content
 }
 
+//business logo
+var logo = document.getElementsByClassName("logo");
+for (var i = 0; i < logo.length; i++) {
+    logo[i].src = LOGO; 
+}
+
+//customer photo
+var customer_photo = document.getElementsByClassName("customer-photo")
+for (var i = 0 ; i < customer_photo.length; i++){
+    customer_photo[i].src=CUSTOMER_PHOTO[i];
+}
 
 //UPDATE CUSTOMER REVIEW
 var author1 = document.getElementsByClassName("author-1")
